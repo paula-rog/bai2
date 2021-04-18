@@ -32,11 +32,11 @@ Vue.component("all-gyms", {
     `,
   methods: {
     fetchData: async function () {
-      await fetch("https://my.api.mockaroo.com/gyms?key=7d3e0910")
+      //77a9da90
+      await fetch("https://my.api.mockaroo.com/gyms?key=f85ffbc0")
         .then((response) => response.json())
         .then((data) => {
           this.loading = false;
-          this.render = false;
           this.gyms = data;
           localStorage.setItem("gyms", JSON.stringify(this.gyms));
         })

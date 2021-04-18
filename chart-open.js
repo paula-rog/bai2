@@ -23,7 +23,7 @@ Vue.component("chart-open", {
                         countOpen += 1;
                     }
                 } else if ((parseInt(hourTo[0]) === parseInt(date.getHours()))) {
-                    if (parseInt(hourFrom[1]) >= parseInt(date.getMinutes())) {
+                    if (parseInt(hourTo[1]) >= parseInt(date.getMinutes())) {
                         countOpen += 1;
                     }
                 } else if (parseInt(hourFrom[0]) <= parseInt(date.getHours()) && parseInt(hourTo[0]) >= parseInt(date.getHours())) {
@@ -36,7 +36,7 @@ Vue.component("chart-open", {
             return this.gyms.length;
         },
         labels: function () {
-            return ['Open', 'Closed'];
+            return ['Otwarte', 'Zamknięte'];
         },
         chartData: function () {
             return [this.gymsNowOpen, this.allGyms - this.gymsNowOpen];

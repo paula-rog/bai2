@@ -303,7 +303,6 @@ Vue.component("add-modal", {
       gyms.unshift({ ...newGym });
 
       this.setGyms(gyms);
-      this.getGyms();
       this.$emit("update");
       document.getElementById("close-add-modal").click();
     },

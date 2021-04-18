@@ -53,7 +53,6 @@ Vue.component("single-gym", {
       }
 
       this.setGyms(gyms);
-      this.getGyms();
       this.$emit("update");
     },
     deleteGym: function () {

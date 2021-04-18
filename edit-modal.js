@@ -336,13 +336,15 @@ Vue.component("edit-modal", {
         }
       }
 
+      console.log(this.gymId);
+
       this.setGyms(gyms);
-      this.getGyms();
       this.$emit("update");
       document.getElementById("close-edit-modal").click();
     },
     editGym: function () {
       const newGym = {
+        id: this.gymId,
         city: this.city,
         name: this.name,
         address: this.address,
