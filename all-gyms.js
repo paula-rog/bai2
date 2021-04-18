@@ -32,7 +32,7 @@ Vue.component("all-gyms", {
     `,
   methods: {
     fetchData: async function () {
-      await fetch("https://my.api.mockaroo.com/gyms?key=77a9da90")
+      await fetch("https://my.api.mockaroo.com/gyms?key=7d3e0910")
         .then((response) => response.json())
         .then((data) => {
           this.loading = false;

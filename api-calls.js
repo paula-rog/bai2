@@ -1,5 +1,5 @@
 const addGym = (newGym, mockAddNewGym) => {
-    fetch("https://my.api.mockaroo.com/gyms?key=77a9da90", {
+    fetch("https://my.api.mockaroo.com/gyms?key=7d3e0910", {
         method: "POST",
         body: newGym,
     })
@@ -17,7 +17,7 @@ const addGym = (newGym, mockAddNewGym) => {
 };
 
 const deleteGym = (id, mockDelete) => {
-    fetch(`https://my.api.mockaroo.com/gyms/${id}?key=77a9da90`, {
+    fetch(`https://my.api.mockaroo.com/gyms/${id}?key=7d3e0910`, {
         method: "DELETE",
     })
         .then((response) => {
@@ -33,7 +33,7 @@ const deleteGym = (id, mockDelete) => {
         });
 };
 const editGym = (id, newGym, mockEditGym) => {
-    fetch(`https://my.api.mockaroo.com/gyms/${id}?key=77a9da90`, {
+    fetch(`https://my.api.mockaroo.com/gyms/${id}?key=7d3e0910`, {
         method: "PUT",
         body: newGym,
     })

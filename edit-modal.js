@@ -43,24 +43,25 @@ Vue.component("edit-modal", {
       const gyms = this.getGyms();
       for (const gym in gyms) {
         if (gyms[gym].id === this.gymId) {
-          this.city = gyms[gym].city;
-          this.name = gyms[gym].name;
-          this.address = gyms[gym].address;
-          this.phone_nr = gyms[gym].phone_nr;
-          this.days.monday.from = gyms[gym].days.monday.from;
-          this.days.monday.to = gyms[gym].days.monday.to;
-          this.days.tuesday.from = gyms[gym].days.tuesday.from;
-          this.days.tuesday.to = gyms[gym].days.tuesday.to;
-          this.days.wednesday.from = gyms[gym].days.wednesday.from;
-          this.days.wednesday.to = gyms[gym].days.wednesday.to;
-          this.days.thursday.from = gyms[gym].days.thursday.from;
-          this.days.thursday.to = gyms[gym].days.thursday.to;
-          this.days.friday.from = gyms[gym].days.friday.from;
-          this.days.friday.to = gyms[gym].days.friday.to;
-          this.days.saturday.from = gyms[gym].days.saturday.from;
-          this.days.saturday.to = gyms[gym].days.saturday.to;
-          this.days.sunday.from = gyms[gym].days.sunday.from;
-          this.days.sunday.to = gyms[gym].days.sunday.to;
+          const selectedGym = { ...gyms[gym] }
+          this.city = selectedGym.city;
+          this.name = selectedGym.name;
+          this.address = selectedGym.address;
+          this.phone_nr = selectedGym.phone_nr;
+          this.days.monday.from = selectedGym.days.monday.from;
+          this.days.monday.to = selectedGym.days.monday.to;
+          this.days.tuesday.from = selectedGym.days.tuesday.from;
+          this.days.tuesday.to = selectedGym.days.tuesday.to;
+          this.days.wednesday.from = selectedGym.days.wednesday.from;
+          this.days.wednesday.to = selectedGym.days.wednesday.to;
+          this.days.thursday.from = selectedGym.days.thursday.from;
+          this.days.thursday.to = selectedGym.days.thursday.to;
+          this.days.friday.from = selectedGym.days.friday.from;
+          this.days.friday.to = selectedGym.days.friday.to;
+          this.days.saturday.from = selectedGym.days.saturday.from;
+          this.days.saturday.to = selectedGym.days.saturday.to;
+          this.days.sunday.from = selectedGym.days.sunday.from;
+          this.days.sunday.to = selectedGym.days.sunday.to;
         }
       }
     }

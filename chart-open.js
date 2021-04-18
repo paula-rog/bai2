@@ -11,14 +11,22 @@ Vue.component("chart-open", {
             const weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
             return weekdays[date.getDay()];
         },
-        getHour: function () {
-            const date = new Date();
-            return date.getHours();
-        },
         gymsNowOpen: function () {
+            const date = new Date();
             let countOpen = 0;
             this.gyms.map((gym) => {
-                if (parseInt(gym.days[`${this.dayToday}`].from) <= this.getHour && parseInt(gym.days[`${this.dayToday}`].to) >= this.getHour) {
+                const hourFrom = gym.days[`${this.dayToday}`].from.split(':');
+                const hourTo = gym.days[`${this.dayToday}`].to.split(':');
+
+                if (parseInt(hourFrom[0]) === parseInt(date.getHours())) {
+                    if (parseInt(hourFrom[1]) <= parseInt(date.getMinutes())) {
+                        countOpen += 1;
+                    }
+                } else if ((parseInt(hourTo[0]) === parseInt(date.getHours()))) {
+                    if (parseInt(hourFrom[1]) >= parseInt(date.getMinutes())) {
+                        countOpen += 1;
+                    }
+                } else if (parseInt(hourFrom[0]) <= parseInt(date.getHours()) && parseInt(hourTo[0]) >= parseInt(date.getHours())) {
                     countOpen += 1;
                 }
             })
@@ -31,7 +39,7 @@ Vue.component("chart-open", {
             return ['Open', 'Closed'];
         },
         chartData: function () {
-            return [this.gymsNowOpen, this.allGyms];
+            return [this.gymsNowOpen, this.allGyms - this.gymsNowOpen];
         },
         ctx: function () {
             return document
@@ -58,13 +66,13 @@ Vue.component("chart-open", {
                     ],
                 },
                 plugins: [
-                  {
-                    beforeInit: function (chart, options) {
-                      chart.legend.afterFit = function () {
-                        this.height = this.height + 20;
-                      };
+                    {
+                        beforeInit: function (chart, options) {
+                            chart.legend.afterFit = function () {
+                                this.height = this.height + 20;
+                            };
+                        },
                     },
-                  },
                 ],
             });
         },
