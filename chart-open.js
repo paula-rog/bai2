@@ -52,12 +52,20 @@ Vue.component("chart-open", {
                             borderColor: [
                                 "rgba(153, 102, 255, 0.4)",
                                 "rgba(255, 99, 132, 0.4)",
-                                "rgba(54, 162, 235, 0.4)",
                             ],
                             data: this.chartData,
                         },
                     ],
                 },
+                plugins: [
+                  {
+                    beforeInit: function (chart, options) {
+                      chart.legend.afterFit = function () {
+                        this.height = this.height + 20;
+                      };
+                    },
+                  },
+                ],
             });
         },
     },

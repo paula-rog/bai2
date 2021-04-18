@@ -11,17 +11,17 @@ Vue.component("all-gyms", {
     this.fetchData();
   },
   template: `
-      <div>
+      <div class="padding-20">
         <div v-if="loading">
-            <div>Loading</div>
+          <div class="loader">Loading...</div>
         </div>
         <div v-else :key="rerenders" class="d-flex flex-row flex-wrap">
-          <div class="d-flex flex-row flex-nowrap justify-content-center" style="width: 100%">
-            <chart-city :getGyms=getGyms></chart-city>
-            <chart-open :getGyms=getGyms></chart-open>
+          <div class="d-flex flex-row flex-wrap justify-content-center width-100 padding-20">
+            <chart-city class="single-chart-width" :getGyms=getGyms></chart-city>
+            <chart-open class="single-chart-width" :getGyms=getGyms></chart-open>
           </div>
-          <div class="d-flex flex-row flex-wrap" style="width: 100%">
-            <div v-for="gym in gyms" style="width: 20%">
+          <div class="d-flex flex-row flex-wrap width-100 justify-content-around">
+            <div v-for="gym in gyms" class="single-gym-width">
                 <single-gym :gymData=gym :getGyms=getGyms :setGyms=setGyms v-on:getGymId=getGymId v-on:update=reloadGyms></single-gym>
             </div>
           </div>

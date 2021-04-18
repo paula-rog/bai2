@@ -50,6 +50,15 @@ Vue.component("chart-city", {
                         },
                     ],
                 },
+                plugins: [
+                  {
+                    beforeInit: function (chart, options) {
+                      chart.legend.afterFit = function () {
+                        this.height = this.height + 20;
+                      };
+                    },
+                  },
+                ],
             });
         },
     },
