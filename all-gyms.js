@@ -19,9 +19,15 @@ Vue.component("all-gyms", {
             <div>Loading</div>
         </div>
         <div v-else :key="rerenders" class="d-flex flex-row flex-wrap">
-            <div v-for="gym in gyms">
+          <div class="d-flex flex-row flex-nowrap justify-content-center" style="width: 100%">
+            <chart-city :getGyms=getGyms></chart-city>
+            <chart-open :getGyms=getGyms></chart-open>
+          </div>
+          <div class="d-flex flex-row flex-wrap" style="width: 100%">
+            <div v-for="gym in gyms" style="width: 20%">
                 <single-gym :gymData=gym :getGyms=getGyms :setGyms=setGyms v-on:getGymId=getGymId v-on:update=reloadGyms></single-gym>
             </div>
+          </div>
         </div>
         <add-modal :getGyms=getGyms :setGyms=setGyms v-on:update=reloadGyms></add-modal>
         <edit-modal :gymId=selectedGymId :getGyms=getGyms :setGyms=setGyms></edit-modal>
@@ -46,12 +52,10 @@ Vue.component("all-gyms", {
       this.rerenders += 1;
     },
     getGyms: function () {
-      this.loading = false;
       const savedGyms = localStorage.getItem("gyms");
       return JSON.parse(savedGyms);
     },
     setGyms: function (gyms) {
-      this.loading = true;
       this.gyms = gyms;
       localStorage.setItem("gyms", JSON.stringify(gyms));
     },
