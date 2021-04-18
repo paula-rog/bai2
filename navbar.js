@@ -24,7 +24,7 @@ Vue.component("navigation", {
                     <div class="d-flex">
                         <button
                         type="button"
-                        class="btn btn-outline-primary"
+                        class="btn btn-success"
                         data-bs-toggle="modal"
                         data-bs-target="#addModal"
                         >

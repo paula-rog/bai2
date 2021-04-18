@@ -10,9 +10,6 @@ Vue.component("all-gyms", {
   created() {
     this.fetchData();
   },
-  update() {
-    console.log("Update");
-  },
   template: `
       <div>
         <div v-if="loading">
@@ -30,7 +27,7 @@ Vue.component("all-gyms", {
           </div>
         </div>
         <add-modal :getGyms=getGyms :setGyms=setGyms v-on:update=reloadGyms></add-modal>
-        <edit-modal :gymId=selectedGymId :getGyms=getGyms :setGyms=setGyms></edit-modal>
+        <edit-modal :gymId=selectedGymId :getGyms=getGyms :setGyms=setGyms v-on:update=reloadGyms></edit-modal>
       </div>
     `,
   methods: {
@@ -60,7 +57,6 @@ Vue.component("all-gyms", {
       localStorage.setItem("gyms", JSON.stringify(gyms));
     },
     reloadGyms: function () {
-      console.log("Emited");
       this.forceRerender();
     },
     getGymId: function (id) {

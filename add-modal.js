@@ -181,8 +181,17 @@ Vue.component("add-modal", {
         </div>
       `,
   methods: {
-    addNewGym: function () {
+    mockAddNewGym: function (newGym) {
       const gyms = this.getGyms();
+
+      gyms.unshift({ ...newGym });
+
+      this.setGyms(gyms);
+      this.getGyms();
+      this.$emit("update");
+      document.getElementById("close-add-modal").click();
+    },
+    addNewGym: function () {
       const newGym = {
         city: this.city,
         name: this.name,
@@ -191,12 +200,7 @@ Vue.component("add-modal", {
         days: { ...this.days },
       };
 
-      gyms.unshift({ ...newGym });
-
-      this.setGyms(gyms);
-      this.getGyms();
-      this.$emit("update");
-      document.getElementById("close-add-modal").click();
+      addGym(newGym, this.mockAddNewGym);
     },
   },
 });

@@ -18,13 +18,10 @@ Vue.component("chart-open", {
         gymsNowOpen: function () {
             let countOpen = 0;
             this.gyms.map((gym) => {
-                console.log(parseInt(gym.days[`${this.dayToday}`].from));
-                console.log(parseInt(gym.days[`${this.dayToday}`].to));
                 if (parseInt(gym.days[`${this.dayToday}`].from) <= this.getHour && parseInt(gym.days[`${this.dayToday}`].to) >= this.getHour) {
                     countOpen += 1;
                 }
             })
-            console.log(countOpen);
             return countOpen;
         },
         allGyms: function () {
