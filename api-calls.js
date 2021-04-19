@@ -1,6 +1,7 @@
 const addGym = (newGym, mockAddNewGym) => {
     //77a9da90
     fetch("https://my.api.mockaroo.com/gyms?key=f85ffbc0", {
+        method: "POST",
         body: JSON.stringify(newGym),
     })
         .then((response) => {

@@ -74,29 +74,29 @@ Vue.component("add-modal", {
               </div>
               <div class="modal-body">
                   <div class="mb-3">
-                      <label for="form-city" class="form-label">Miasto</label>
-                      <input type="text" class="form-control" id="form-city" v-model="city" required>
+                      <label for="form-add-city" class="form-label">Miasto</label>
+                      <input type="text" class="form-control" id="form-add-city" v-model="city" required>
                       <div class="invalid-feedback" id="validate-add-city" style="display: none;">
                         Miasto jest wymagane.
                       </div>
                   </div>
                   <div class="mb-3">
-                      <label for="form-name" class="form-label">Nazwa</label>
-                      <input type="text" class="form-control" id="form-name" v-model="name" required>
+                      <label for="form-add-name" class="form-label">Nazwa</label>
+                      <input type="text" class="form-control" id="form-add-name" v-model="name" required>
                       <div class="invalid-feedback" id="validate-add-name" style="display: none;">
                         Nazwa jest wymagana.
                       </div>
                   </div>
                   <div class="mb-3">
-                      <label for="form-address" class="form-label">Adress</label>
-                      <input type="text" class="form-control" id="form-address" v-model="address" required>
+                      <label for="form-add-address" class="form-label">Adress</label>
+                      <input type="text" class="form-control" id="form-add-address" v-model="address" required>
                       <div class="invalid-feedback" id="validate-add-address" style="display: none;">
                         Adres jest wymagany.
                       </div>
                   </div>
                   <div class="mb-3">
-                      <label for="form-phone" class="form-label">Nr telefonu</label>
-                      <input type="text" class="form-control" id="form-phone" v-model="phone_nr" required>
+                      <label for="form-add-phone" class="form-label">Nr telefonu</label>
+                      <input type="text" class="form-control" id="form-add-phone" v-model="phone_nr" required>
                       <div class="invalid-feedback" id="validate-add-phone" style="display: none;">
                         Numer telefonu jest wymagany.
                       </div>
@@ -109,12 +109,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-monday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-monday-from" v-model="days.monday.from" required>
+                          <label for="form-time-add-monday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-monday-from" v-model="days.monday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-monday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-monday-to" v-model="days.monday.to" required>
+                          <label for="form-time-add-monday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-monday-to" v-model="days.monday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-monday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -125,12 +125,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-tuesday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-tuesday-from" v-model="days.tuesday.from" required>
+                          <label for="form-time-add-tuesday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-tuesday-from" v-model="days.tuesday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-tuesday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-tuesday-to" v-model="days.tuesday.to" required>
+                          <label for="form-time-add-tuesday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-tuesday-to" v-model="days.tuesday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-tuesday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -141,12 +141,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-wednesday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-wednesday-from" v-model="days.wednesday.from" required>
+                          <label for="form-time-add-wednesday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-wednesday-from" v-model="days.wednesday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-wednesday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-wednesday-to" v-model="days.wednesday.to" required>
+                          <label for="form-time-add-wednesday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-wednesday-to" v-model="days.wednesday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-wednesday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -157,12 +157,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-thursday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-thursday-from" v-model="days.thursday.from" required>
+                          <label for="form-time-add-thursday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-thursday-from" v-model="days.thursday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-thursday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-thursday-to" v-model="days.thursday.to" required>
+                          <label for="form-time-add-thursday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-thursday-to" v-model="days.thursday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-thursday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -173,12 +173,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-friday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-friday-from" v-model="days.friday.from" required>
+                          <label for="form-time-add-friday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-friday-from" v-model="days.friday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-friday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-friday-to" v-model="days.friday.to" required>
+                          <label for="form-time-add-friday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-friday-to" v-model="days.friday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-friday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -189,12 +189,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-saturday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-saturday-from" v-model="days.saturday.from" required>
+                          <label for="form-time-add-saturday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-saturday-from" v-model="days.saturday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-saturday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-saturday-to" v-model="days.saturday.to" required>
+                          <label for="form-time-add-saturday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-saturday-to" v-model="days.saturday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-saturday" style="display: none;">
                         Niepoprawne godziny otwarcia.
@@ -205,12 +205,12 @@ Vue.component("add-modal", {
                   </div>
                   <div class="row mb-3">
                       <div class="col">
-                          <label for="form-time-sunday-from" class="form-label">Od</label>
-                          <input type="time" class="form-control" id="form-time-sunday-from" v-model="days.sunday.from" required>
+                          <label for="form-time-add-sunday-from" class="form-label">Od</label>
+                          <input type="time" class="form-control" id="form-time-add-sunday-from" v-model="days.sunday.from" required>
                       </div>
                       <div class="col">
-                          <label for="form-time-sunday-to" class="form-label">Do</label>
-                          <input type="time" class="form-control" id="form-time-sunday-to" v-model="days.sunday.to" required>
+                          <label for="form-time-add-sunday-to" class="form-label">Do</label>
+                          <input type="time" class="form-control" id="form-time-add-sunday-to" v-model="days.sunday.to" required>
                       </div>
                       <div class="invalid-feedback" id="validate-add-sunday" style="display: none;">
                         Niepoprawne godziny otwarcia.
