@@ -40,8 +40,7 @@ Vue.component("add-modal", {
   },
   mounted: function () {
     var addModal = document.getElementById('addModal');
-    addModal.addEventListener('hide.bs.modal', () => {
-      this.resetFields()
+    addModal.addEventListener('hide.bs.modal', function () {
       document.getElementById('validate-add-city').style.display = "none";
       document.getElementById('validate-add-name').style.display = "none";
       document.getElementById('validate-add-address').style.display = "none";
